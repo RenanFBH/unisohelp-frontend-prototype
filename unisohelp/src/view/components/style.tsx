@@ -114,7 +114,7 @@ const styleUnisoHelp = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row"
   },
-  buttonGroupIndex: {
+  buttonGroup: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -233,7 +233,7 @@ const styleUnisoHelp = StyleSheet.create({
   },
 
   //settings
-  buttonSettings: {
+  buttonSettingsAndAccessibility: {
     minHeight:  height * 0.08,
     minWidth: width * 0.9,
     backgroundColor: "#fff",
@@ -249,6 +249,12 @@ const styleUnisoHelp = StyleSheet.create({
     color: "#1E3ABA",
     position: 'absolute',
     marginLeft: width * 0.5,
+  },
+
+  //accessibility
+  switchAccessibility: {
+    marginRight: width * 0.5,
+    position: "absolute",
   },
 
 });

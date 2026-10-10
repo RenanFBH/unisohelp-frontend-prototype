@@ -35,22 +35,22 @@ const SettingsScreen =()=> {
                 </View>
             </View>
             <View style={styleUnisoHelp.content}>
-                <View style={styleUnisoHelp.buttonGroupIndex}>
-                    <Pressable style={styleUnisoHelp.buttonSettings} onPress={() => {btnProfile()}}>
+                <View style={styleUnisoHelp.buttonGroup}>
+                    <Pressable style={styleUnisoHelp.buttonSettingsAndAccessibility} onPress={() => {btnProfile()}}>
                         <FontAwesomeIcon icon={faUser} size={30} style={styleUnisoHelp.iconButton} />
                         <Text style={styleUnisoHelp.textButton}>Perfil</Text>
                         <FontAwesomeIcon icon={faAngleRight} size={30} style={styleUnisoHelp.arrowButton}/>
                     </Pressable>
                 </View>
-                <View style={styleUnisoHelp.buttonGroupIndex}>
-                    <Pressable style={styleUnisoHelp.buttonSettings} onPress={() => {btnAccessibility()}}>
+                <View style={styleUnisoHelp.buttonGroup}>
+                    <Pressable style={styleUnisoHelp.buttonSettingsAndAccessibility} onPress={() => {btnAccessibility()}}>
                         <FontAwesomeIcon icon={faWheelchairAlt} size={30} style={styleUnisoHelp.iconButton} />
                         <Text style={styleUnisoHelp.textButton}>Acessibilidade</Text>
                         <FontAwesomeIcon icon={faAngleRight} size={30} style={styleUnisoHelp.arrowButton}/>
                     </Pressable>
                 </View>
-                <View style={styleUnisoHelp.buttonGroupIndex}>
-                    <Pressable style={styleUnisoHelp.buttonSettings} onPress={() => {btnExit()}}>
+                <View style={styleUnisoHelp.buttonGroup}>
+                    <Pressable style={styleUnisoHelp.buttonSettingsAndAccessibility} onPress={() => {btnExit()}}>
                         <FontAwesomeIcon icon={faRightFromBracket} size={30} style={styleUnisoHelp.iconButton} />
                         <Text style={styleUnisoHelp.textButton}>Sair</Text>
                         <FontAwesomeIcon icon={faAngleRight} size={30} style={styleUnisoHelp.arrowButton}/>

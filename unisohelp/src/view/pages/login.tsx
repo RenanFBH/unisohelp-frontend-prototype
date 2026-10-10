@@ -31,8 +31,10 @@ const LoginScreen =()=> {
         "Erro!",
         "RA ou senha inválidos!"
       );
+      return false;
     } 
     navigation.navigate("index");
+    
   };
 
   return (

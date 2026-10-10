@@ -7,9 +7,9 @@ import { RootStackParamList } from '../../../routes';
 
 import styleUnisoHelp from '../components/style';
 
-type NavigationProp = StackNavigationProp<RootStackParamList, "faculty">
+type NavigationProp = StackNavigationProp<RootStackParamList, "employees">
 
-const FacultyScreen =()=> {
+const EmployeesScreen =()=> {
 
     const navigation = useNavigation<NavigationProp>();
 
@@ -29,4 +29,4 @@ const FacultyScreen =()=> {
     )
 };
 
-export default FacultyScreen;
+export default EmployeesScreen;

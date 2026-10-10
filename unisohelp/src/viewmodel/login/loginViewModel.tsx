@@ -1,16 +1,17 @@
 import AlunoModel from '../../model/alunoModel';
-import AlunoRepository from '../../data/repositories/alunoRepository';
 
-const LoginViewModel = async (data: AlunoModel)=> {
+const LoginViewModel =(data: AlunoModel)=> {
 
-    let response = AlunoRepository.findAluno(data.ra);
-    console.log(response);
+    if(data.ra !== 19112026 && data.password !== "senha") {
+        return false;
+    }
+    if(data.remember === "checked") {
+        localStorage.setItem("login", "isLoggedIn");
+    }
+    localStorage.setItem("ra", data.ra.toString())
+    localStorage.setItem("password", data.password)
+    return true;
 
-
-    //if (data.password !== "19112026") {
-        //return false;
-    //} 
-    //return true;
 
 }
 

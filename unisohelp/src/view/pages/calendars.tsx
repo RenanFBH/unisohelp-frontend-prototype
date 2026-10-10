@@ -30,17 +30,17 @@ const CalendarsScreen =()=> {
                 </View>
             </View>
             <View style={styleUnisoHelp.content}>
-                <View style={styleUnisoHelp.buttonGroupIndex}>
+                <View style={styleUnisoHelp.buttonGroup}>
                     <Pressable style={styleUnisoHelp.buttonIndex} onPress={() => {openURL('https://sistema.uniso.br/barcode/calendario-academico-graduacao.pdf')}}>
                         <Text style={styleUnisoHelp.textButton}>Calendário Presencial</Text>
                     </Pressable>
                 </View>
-                <View style={styleUnisoHelp.buttonGroupIndex}>
+                <View style={styleUnisoHelp.buttonGroup}>
                     <Pressable style={styleUnisoHelp.buttonIndex} onPress={() => {openURL('https://sistema.uniso.br/barcode/calendario-academico-graduacao-ead.pdf')}}>
                         <Text style={styleUnisoHelp.textButton}>Calendário EAD</Text>
                     </Pressable>
                 </View>
-                <View style={styleUnisoHelp.buttonGroupIndex}>
+                <View style={styleUnisoHelp.buttonGroup}>
                     <Pressable style={styleUnisoHelp.buttonIndex} onPress={() => {openURL('https://sistema.uniso.br/barcode/calendario-academico-pos-graduacao-stricto-sensu-2026.pdf')}}>
                         <Text style={styleUnisoHelp.textButton}>Calendário Stricto Sensu</Text>
                     </Pressable>
