@@ -8,9 +8,9 @@ import LoginScreen  from './src/view/pages/login';
 import IndexScreen from './src/view/pages/index';
 import GuideScreen from './src/view/pages/guide';
 import ServiceScreen from './src/view/pages/service';
-import EmployeesScreen from './src/view/pages/employees';
-import CalendarsScreen from './src/view/pages/calendars';
-import SettingsScreen from './src/view/pages/settings';
+import EmployeeScreen from './src/view/pages/employee';
+import CalendarScreen from './src/view/pages/calendar';
+import SettingScreen from './src/view/pages/setting';
 import AccessibilityScreen from './src/view/pages/accessibility';
 import ProfileScreen from './src/view/pages/profile';
 
@@ -21,9 +21,9 @@ export type RootStackParamList  = {
   guide: undefined;
   service: undefined;
   forum: undefined;
-  employees: undefined;
-  calendars: undefined;
-  settings: undefined;
+  employee: undefined;
+  calendar: undefined;
+  setting: undefined;
   accessibility: undefined;
   profile: undefined;
 };
@@ -39,7 +39,7 @@ const Routes =()=> {
   //alterando rota caso esteja logado e o sistema for web
   if (Platform.OS === "web") {
     if (localStorage.getItem("login") === "isLoggedIn") {
-      changeInitialRoute = "service";
+      changeInitialRoute = "index";
     }
   }
 
@@ -51,9 +51,9 @@ const Routes =()=> {
         <Stack.Screen name="index" component={IndexScreen} options={{headerShown: false}}/>
         <Stack.Screen name="guide" component={GuideScreen} options={{headerShown: false}}/>
         <Stack.Screen name="service" component={ServiceScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="employees" component={EmployeesScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="calendars" component={CalendarsScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="settings" component={SettingsScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="employee" component={EmployeeScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="calendar" component={CalendarScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="setting" component={SettingScreen} options={{headerShown: false}}/>
         <Stack.Screen name="accessibility" component={AccessibilityScreen} options={{headerShown: false}}/>
         <Stack.Screen name="profile" component={ProfileScreen} options={{headerShown: false}}/>
       </Stack.Navigator>

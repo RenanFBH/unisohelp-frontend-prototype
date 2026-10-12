@@ -5,7 +5,7 @@ import { RadioButton } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
-import LoginViewModel, {Login} from '../../viewmodel/login/loginViewModel';
+import Authentication from '../../viewmodel/authViewModel';
 
 //importando estilo
 import styleUnisoHelp from '../components/style';
@@ -34,7 +34,8 @@ const LoginScreen =()=> {
       remember,
       name
     }
-    let response = Login(data);
+    const auth = new Authentication();
+    let response = auth.Login(data);
     if (!response) {
       Alert.alert(
         "Erro!",

@@ -5,12 +5,13 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
+import EmployeeModelView from '../../viewmodel/employeeViewModel';
 
 //importando estilo
 import styleUnisoHelp from '../components/style';
 
 //definindo o tipo da navegação para a tela employees
-type NavigationProp = StackNavigationProp<RootStackParamList, "employees">
+type NavigationProp = StackNavigationProp<RootStackParamList, "employee">
 
 //função principal
 const EmployeesScreen =()=> {
@@ -18,13 +19,19 @@ const EmployeesScreen =()=> {
     //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
 
+    const employeeModelView = new EmployeeModelView();
+    const teste =()=> {
+        console.log(employeeModelView.getByCourses(1));
+        
+    }
+
     //visual da página employees
     return(
         <ScrollView style={styleUnisoHelp.bg}>
             <View style={styleUnisoHelp.indexHeader}>
                 <View style={styleUnisoHelp.titleAndSubtitleViewPages}>
                     <View style={styleUnisoHelp.backButton}>
-                        <Pressable onPress={() => {navigation.pop()}}>
+                        <Pressable onPress={() => {teste()}}>
                             <FontAwesomeIcon icon={faAngleLeft} size={30} style={{color: "#1e3aba",}}/>
                         </Pressable>
                     </View>

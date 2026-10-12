@@ -5,13 +5,13 @@ import { faAngleLeft, faAngleRight, faUser, faWheelchairAlt, faRightFromBracket 
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
-import LoginViewModel, {Logout} from '../../viewmodel/login/loginViewModel';
+import Authentication from '../../viewmodel/authViewModel';
 
 //importando estilo
 import styleUnisoHelp from '../components/style';
 
 //definindo o tipo da navegação para a tela settings
-type NavigationProp = StackNavigationProp<RootStackParamList, "settings">
+type NavigationProp = StackNavigationProp<RootStackParamList, "setting">
 
 //função principal
 const SettingsScreen =()=> {
@@ -27,7 +27,8 @@ const SettingsScreen =()=> {
         navigation.navigate('accessibility')
     };
     const btnExit =()=> {
-        Logout();
+        const auth = new Authentication();
+        auth.Logout();
         navigation.navigate('login');
     };
 

@@ -10,7 +10,7 @@ import { RootStackParamList } from '../../../routes';
 import styleUnisoHelp from '../components/style';
 
 //definindo o tipo da navegação para a tela calendars
-type NavigationProp = StackNavigationProp<RootStackParamList, "calendars">
+type NavigationProp = StackNavigationProp<RootStackParamList, "calendar">
 
 //função para abrir links
 const openURL =(url: string)=> {
