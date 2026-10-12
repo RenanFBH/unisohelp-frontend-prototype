@@ -1,3 +1,4 @@
+//importando elementos essenciais
 import * as React from 'react';
 import { View, Text, Image, TextInput, Pressable, KeyboardAvoidingView, Alert, Platform, ScrollView } from 'react-native';
 import { RadioButton } from 'react-native-paper';
@@ -6,24 +7,32 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
 import LoginViewModel from '../../viewmodel/login/loginViewModel';
 
+//importando estilo
 import styleUnisoHelp from '../components/style';
 
+//definindo o tipo da navegação para a tela login
 type NavigationProp = StackNavigationProp<RootStackParamList, 'login'>;
 
+//função principal
 const LoginScreen =()=> {
 
+  //tipando o hook useNavigation com o tipo NavigationProp
   const navigation = useNavigation<NavigationProp>();
 
+  //variáveis do formulário de login
   const [remember, setRemember] = React.useState("unchecked");
   const [btnPress, setBtn] = React.useState("unpressed");
   const [ra, setRa] = React.useState("");
   const [password, setPassword] = React.useState("");
-
+  let name = "Renan";
+  
+  //função para logar
   const handleSignIn =()=> {
     const data = {
       ra: Number(ra),
       password,
-      remember
+      remember,
+      name
     }
     let response = LoginViewModel(data);
     if (!response) {
@@ -34,12 +43,10 @@ const LoginScreen =()=> {
       return false;
     } 
     navigation.navigate("index");
-    
   };
 
+  //visual da página login
   return (
-    
-    
     <KeyboardAvoidingView contentContainerStyle={styleUnisoHelp.bg} behavior="position" enabled>
         <View style={styleUnisoHelp.loginHeader}>
           <Image style={styleUnisoHelp.icon} source={require('../../../assets/img/unisoIcon.png')} />
@@ -90,5 +97,6 @@ const LoginScreen =()=> {
   );
 }
 
+//exportando função principal
 export default LoginScreen;
 

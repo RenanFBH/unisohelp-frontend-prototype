@@ -1,6 +1,8 @@
+//importando elementos essenciais
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//importando páginas
 import LoginScreen  from './src/view/pages/login';
 import IndexScreen from './src/view/pages/index';
 import GuideScreen from './src/view/pages/guide';
@@ -11,6 +13,7 @@ import SettingsScreen from './src/view/pages/settings';
 import AccessibilityScreen from './src/view/pages/accessibility';
 import ProfileScreen from './src/view/pages/profile';
 
+//exportando 
 export type RootStackParamList  = {
   login: undefined;
   index: undefined;
@@ -23,25 +26,21 @@ export type RootStackParamList  = {
   accessibility: undefined;
   profile: undefined;
 };
-document.addEventListener("load", funcX);
 
-function funcX(){
-  console.log("hi");
-}
 const Stack = createStackNavigator<RootStackParamList >();
 
+//função principal
 const Routes =()=> {
 
   let changeInitialRoute = "login";
 
     if (localStorage.getItem("login") === "isLoggedIn") {
-      changeInitialRoute = "index";
+      changeInitialRoute = "service";
     }
 
-    
     console.log(changeInitialRoute);
 
-
+  //criando rotas
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={changeInitialRoute as keyof RootStackParamList}>
@@ -59,4 +58,5 @@ const Routes =()=> {
   );
 }
 
+//exportando função principal
 export default Routes;

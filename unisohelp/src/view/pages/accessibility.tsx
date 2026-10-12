@@ -1,22 +1,30 @@
+//importando elementos essenciais
 import { View, ScrollView, Text, Pressable } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
-import styleUnisoHelp from '../components/style';
 import { useState } from 'react';
 import { Switch } from 'react-native-paper';
 
+//importando estilo
+import styleUnisoHelp from '../components/style';
+
+//definindo o tipo da navegação para a tela accessibility
 type NavigationProp = StackNavigationProp<RootStackParamList, "accessibility">;
 
+//função principal
 const AccessibilityScreen =()=> {
 
+    //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
 
+    //estados das opções de acessibilidade
     const [btnHighContrast, btnHighContrastSet] = useState(false);
     const [btnDarkMode, btnDarkModeSet] = useState(false);
 
+    //visual da página accessibility
     return(
         <ScrollView style={styleUnisoHelp.bg}>
             <View style={styleUnisoHelp.indexHeader}>
@@ -45,4 +53,5 @@ const AccessibilityScreen =()=> {
     )
 };
 
+//exportando função principal
 export default AccessibilityScreen;

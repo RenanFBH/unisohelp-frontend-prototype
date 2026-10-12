@@ -1,17 +1,24 @@
+//importando elementos essenciais
 import { View, ScrollView, Text, Pressable } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faAngleLeft, faAngleRight, faUser, faWheelchairAlt, faRightFromBracket  } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
+
+//importando estilo
 import styleUnisoHelp from '../components/style';
 
+//definindo o tipo da navegação para a tela settings
 type NavigationProp = StackNavigationProp<RootStackParamList, "settings">
 
+//função principal
 const SettingsScreen =()=> {
 
+    //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
 
+    //funções dos botões da página configurações
     const btnProfile =()=> {
         navigation.navigate('profile')
     };
@@ -19,9 +26,11 @@ const SettingsScreen =()=> {
         navigation.navigate('accessibility')
     };
     const btnExit =()=> {
+        localStorage.clear();
         navigation.navigate('login');
     };
 
+    //visual da página configurações
     return(
         <ScrollView style={styleUnisoHelp.bg}>
             <View style={styleUnisoHelp.indexHeader}>
@@ -61,4 +70,5 @@ const SettingsScreen =()=> {
     )
 };
 
+//exportando função principal
 export default SettingsScreen;

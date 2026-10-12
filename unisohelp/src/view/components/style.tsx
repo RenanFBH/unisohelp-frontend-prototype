@@ -120,13 +120,16 @@ const styleUnisoHelp = StyleSheet.create({
     justifyContent: "center",
     paddingTop: 20,
   },
+  //service
+  dropdownGroupService: {
+    
+  },
+
   //settings
 
 
 
   //estilos de objetos
-  //geral
-
   //splashScreen
   logo: {
     width: 400,
@@ -230,6 +233,23 @@ const styleUnisoHelp = StyleSheet.create({
   backButton: {
     position: "absolute",
     marginEnd: width * 0.7,
+  },
+  buttonGuide: {
+    minHeight:  height * 0.09,
+    minWidth: width * 0.9,
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 27,
+    borderColor: "#1E3ABA",
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  //service
+  dropdownService: {
+
   },
 
   //settings
