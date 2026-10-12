@@ -5,6 +5,7 @@ import { faAngleLeft, faAngleRight, faUser, faWheelchairAlt, faRightFromBracket 
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
+import LoginViewModel, {Logout} from '../../viewmodel/login/loginViewModel';
 
 //importando estilo
 import styleUnisoHelp from '../components/style';
@@ -26,7 +27,7 @@ const SettingsScreen =()=> {
         navigation.navigate('accessibility')
     };
     const btnExit =()=> {
-        localStorage.clear();
+        Logout();
         navigation.navigate('login');
     };
 

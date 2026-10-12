@@ -122,6 +122,8 @@ const styleUnisoHelp = StyleSheet.create({
   },
   //service
   dropdownGroupService: {
+    marginTop: height * 0.03,
+    marginBottom: height * 0.03,
     
   },
 
@@ -249,7 +251,27 @@ const styleUnisoHelp = StyleSheet.create({
 
   //service
   dropdownService: {
-
+    minHeight: height * 0.07,
+    minWidth: width * 0.9,
+    backgroundColor: "#fff",
+    margin: 5,
+    borderWidth: 1,
+    borderRadius: 15,
+    borderColor: "#1E3ABA",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    flexDirection: "row"
+  },
+  dropdownText: {
+    color: "#1E3ABA",
+    fontSize: 15,
+    fontWeight: 600
+  },
+  arrowButtonSector: {
+    color: "#1E3ABA",
+    position: "absolute",
+    marginLeft: width * 0.75
   },
 
   //settings

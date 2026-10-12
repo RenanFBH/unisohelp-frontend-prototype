@@ -5,6 +5,7 @@ import { faRightToBracket, faPhoneVolume, faUsers, faCalendar, faGear, faMap  } 
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
+import { Platform } from 'react-native';
 
 //importando estilo
 import styleUnisoHelp from '../components/style';
@@ -17,6 +18,21 @@ const IndexScreen = () => {
 
   //tipando o hook useNavigation com o tipo NavigationProp
   const navigation = useNavigation<NavigationProp>();
+
+  //Criando userName e userRa e verificando se o dispositivo for web atribui os valores do localStorage, se for outros, userName é definido como Teste e userRa como 100001
+  let userName: string = "Teste";
+  let userRa: number = 100001;
+  if (Platform.OS === "web") {
+
+    const storedName = localStorage.getItem("name");
+    const storedRa = localStorage.getItem("ra") ;
+
+    if (storedName !== null && storedRa !== null) {
+      userName = storedName;
+      userRa = Number(storedRa);
+    }
+
+  } 
 
   //funções dos botões do index
   const btnGuide =()=> {
@@ -47,8 +63,8 @@ const IndexScreen = () => {
       <View style={styleUnisoHelp.indexHeader}>
         <Image style={styleUnisoHelp.icon} source={require('../../../assets/img/unisoIcon.png')} />
         <View style={styleUnisoHelp.titleAndSubtitleView}>
-          <Text style={styleUnisoHelp.welcomeHeaderIndex}>Bem vindo(a) {localStorage.getItem("name")}!</Text>
-          <Text style={styleUnisoHelp.raHeader}>RA {localStorage.getItem("ra")}</Text>
+          <Text style={styleUnisoHelp.welcomeHeaderIndex}>Bem vindo(a) {userName}!</Text>
+          <Text style={styleUnisoHelp.raHeader}>RA {userRa}</Text>
         </View>
         <Pressable onPress={() => {btnProfile()}}>
           <Image style={styleUnisoHelp.icon} source={require('../../../assets/img/profile/example.png')} />

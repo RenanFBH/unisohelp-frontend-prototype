@@ -1,6 +1,7 @@
 //importando elementos essenciais
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Platform } from 'react-native';
 
 //importando páginas
 import LoginScreen  from './src/view/pages/login';
@@ -32,13 +33,15 @@ const Stack = createStackNavigator<RootStackParamList >();
 //função principal
 const Routes =()=> {
 
+  //definindo rota inicial
   let changeInitialRoute = "login";
 
+  //alterando rota caso esteja logado e o sistema for web
+  if (Platform.OS === "web") {
     if (localStorage.getItem("login") === "isLoggedIn") {
       changeInitialRoute = "service";
     }
-
-    console.log(changeInitialRoute);
+  }
 
   //criando rotas
   return (
