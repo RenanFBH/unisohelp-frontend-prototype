@@ -81,7 +81,7 @@ const IndexScreen = () => {
         <View style={global.group}>
           <Pressable style={index.button} onPress={() => {btnService()}}>
             <FontAwesomeIcon icon={faPhoneVolume} size={30} style={global.icon} />
-            <Text style={global.text}>Atendimento</Text>
+            <Text style={global.text}>Contatos</Text>
           </Pressable>
         </View>
         <View style={global.group}>

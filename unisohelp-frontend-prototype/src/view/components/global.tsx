@@ -59,7 +59,7 @@ const global = StyleSheet.create({
   },
   icon: {  
     color: "#1E3ABA",
-    marginRight: width * 0.5,
+    marginRight: width * 0.65,
     position: "absolute",
   },
   text: {

@@ -8,22 +8,25 @@ const { width, height } = Dimensions.get("window");
 const service = StyleSheet.create({ 
 
   sector: {
-    marginTop: 20,
+    marginTop: 15,
+    marginStart: width * 0.05,
+    marginEnd: width * 0.05,
     backgroundColor: "#fff",
-    padding: 10,
+    padding: 15,
     borderWidth: 1,
     borderRadius: 18,
-    borderColor: "rgba(30, 58, 186, 0.5)",
+    borderColor: "rgba(30, 58, 186, 0.3)",
   },
   name: {
     color: "#1E3ABA",
-    fontSize: 20,
-    fontWeight: 700,
+    fontSize: 17,
+    fontWeight: 500,
     textAlign: "center",
   },
   phone: {
     color: "#1E3ABA",
     fontSize: 18,
+    textAlign: "center",
   },
   separator: {
     backgroundColor: "#1E3ABA",
