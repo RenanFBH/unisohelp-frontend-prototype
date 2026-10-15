@@ -1,5 +1,5 @@
  <p align="center">
-  <img src="unisohelp/assets/img/rectangleSynapps.png" alt="Logo da Synapps" width="100%">
+  <img src="unisohelp-frontend-prototype/assets/img/rectangleSynapps.png" alt="Logo da Synapps" width="100%">
 </p>
 
 <h1 align="center">UNISO Help</h1>
