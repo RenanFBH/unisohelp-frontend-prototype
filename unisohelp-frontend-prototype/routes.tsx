@@ -7,7 +7,7 @@ import { Platform } from 'react-native';
 import LoginScreen  from './src/view/pages/login';
 import IndexScreen from './src/view/pages/index';
 import GuideScreen from './src/view/pages/guide';
-import ServiceScreen from './src/view/pages/service';
+import ContactScreen from './src/view/pages/contact';
 import EmployeeScreen from './src/view/pages/employee';
 import CalendarScreen from './src/view/pages/calendar';
 import SettingScreen from './src/view/pages/setting';
@@ -19,7 +19,7 @@ export type RootStackParamList  = {
   login: undefined;
   index: undefined;
   guide: undefined;
-  service: undefined;
+  contact: undefined;
   forum: undefined;
   employee: undefined;
   calendar: undefined;
@@ -50,7 +50,7 @@ const Routes =()=> {
         <Stack.Screen name="login" component={LoginScreen} options={{headerShown: false}}/>
         <Stack.Screen name="index" component={IndexScreen} options={{headerShown: false}}/>
         <Stack.Screen name="guide" component={GuideScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="service" component={ServiceScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="contact" component={ContactScreen} options={{headerShown: false}}/>
         <Stack.Screen name="employee" component={EmployeeScreen} options={{headerShown: false}}/>
         <Stack.Screen name="calendar" component={CalendarScreen} options={{headerShown: false}}/>
         <Stack.Screen name="setting" component={SettingScreen} options={{headerShown: false}}/>

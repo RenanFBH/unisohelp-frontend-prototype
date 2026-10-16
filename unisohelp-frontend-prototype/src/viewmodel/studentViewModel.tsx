@@ -1,5 +1,6 @@
 //importando elementos essenciais
 import studentRepository from "../data/repository/studentRepository";
+import CourseModel from "../model/courseModel";
 
 //classe principal
 class StudentViewModel {
@@ -18,6 +19,16 @@ class StudentViewModel {
     }
     return null;
   };
+
+  //função para editar foto
+  update(id: number, photo: string) {
+    for (const student in studentRepository) {
+      if (studentRepository[student].id === id){
+        studentRepository[student].photo = photo;
+      }
+    }
+  }
+
 
 };
 

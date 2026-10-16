@@ -1,8 +1,8 @@
 //importando elementos essenciais
-import SectorModel from "../../model/sectorModel";
+import ContactModel from "../../model/contactModel";
 
 //dicionário para simular setores carregados do banco de dados
-const sectorRepository: Record<number, SectorModel> = {
+const contactRepository: Record<number, ContactModel> = {
     1: {id: 1, name: 'Clínica de nutrição', phone: 15981472631},
     2: {id: 2, name: 'Clínica de odontologia', phone: 15908372613},
     3: {id: 3, name: 'Clínica veterinária universitária', phone: 15938274615},
@@ -23,4 +23,4 @@ const sectorRepository: Record<number, SectorModel> = {
 };
 
 //exportando repositório
-export default sectorRepository;
+export default contactRepository;

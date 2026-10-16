@@ -39,8 +39,8 @@ const IndexScreen = () => {
   const btnGuide =()=> {
     navigation.navigate("guide");
   };
-  const btnService =()=> {
-    navigation.navigate("service");
+  const btnContact =()=> {
+    navigation.navigate("contact");
   };
   const btnFaculty =()=> {
     navigation.navigate("employee");
@@ -68,7 +68,7 @@ const IndexScreen = () => {
           <Text style={index.subtitle}>RA {userRa}</Text>
         </View>
         <Pressable onPress={() => {btnProfile()}}>
-          <Image style={global.iconHeader} source={require('../../../assets/img/profile/example.png')} />
+          <Image style={index.photo} source={require('../../../assets/img/profile/default.png')} />
         </Pressable>
       </View>
       <View style={global.content}>
@@ -79,7 +79,7 @@ const IndexScreen = () => {
           </Pressable>
         </View>
         <View style={global.group}>
-          <Pressable style={index.button} onPress={() => {btnService()}}>
+          <Pressable style={index.button} onPress={() => {btnContact()}}>
             <FontAwesomeIcon icon={faPhoneVolume} size={30} style={global.icon} />
             <Text style={global.text}>Contatos</Text>
           </Pressable>

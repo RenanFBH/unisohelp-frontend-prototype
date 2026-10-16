@@ -19,7 +19,7 @@ const openURL =(url: string)=> {
 }
 
 //função principal
-const CalendarsScreen =()=> {
+const CalendarScreen =()=> {
 
     //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
@@ -60,4 +60,4 @@ const CalendarsScreen =()=> {
 };
 
 //exportando função principal
-export default CalendarsScreen;
+export default CalendarScreen;

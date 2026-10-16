@@ -22,10 +22,12 @@ class Authentication {
                     if(remember === "checked") {
                         localStorage.setItem("login", "isLoggedIn");
                     }
-                    localStorage.setItem("ra", ra.toString())
-                    localStorage.setItem("password", password)
-                    localStorage.setItem("name", currentStudent.name)
-                    localStorage.setItem("photo", currentStudent.photo)
+                    localStorage.setItem("id", currentStudent.id.toString());
+                    localStorage.setItem("ra", ra.toString());
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("name", currentStudent.name);
+                    localStorage.setItem("photo", currentStudent.photo);
+                    localStorage.setItem("email", currentStudent.email);
                 }
                 return true;
             } 

@@ -8,7 +8,7 @@ const { width, height } = Dimensions.get("window");
 const guide = StyleSheet.create({
 
   button: {
-    minHeight:  height * 0.09,
+    minHeight:  height * 0.08,
     minWidth: width * 0.9,
     backgroundColor: "#fff",
     borderWidth: 1,

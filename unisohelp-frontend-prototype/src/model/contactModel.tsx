@@ -1,9 +1,9 @@
 //modelo do curso
-interface SectorModel {
+interface ContactModel {
     id: number,
     name: string,
     phone: number
 };
 
 //exportando modelo
-export default SectorModel;
+export default ContactModel;

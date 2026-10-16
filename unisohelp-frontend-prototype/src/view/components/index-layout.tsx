@@ -20,6 +20,15 @@ const index = StyleSheet.create({
     fontSize: 20,
     fontWeight: 400,
   },
+  photo: {
+    width: 60,
+    height: 60,
+    padding: 0,
+    marginRight: 10,
+    borderWidth: 1,
+    borderRadius: 360,
+    borderColor: "#1E3ABA",
+  },
   //botões
   button: {
       minHeight:  height * 0.11,

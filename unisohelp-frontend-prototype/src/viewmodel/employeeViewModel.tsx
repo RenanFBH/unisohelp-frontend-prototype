@@ -7,7 +7,7 @@ import CourseModel from "../model/courseModel";
 import PositionViewModel from "./positionViewModel";
 
 //classe principal
-class EmployeeModelView {
+class EmployeeViewModel {
 
     //função que retorna todos os funcionários
     getAll() {
@@ -68,4 +68,4 @@ class EmployeeModelView {
 };
 
 //exportando classe principal
-export default EmployeeModelView;
+export default EmployeeViewModel;

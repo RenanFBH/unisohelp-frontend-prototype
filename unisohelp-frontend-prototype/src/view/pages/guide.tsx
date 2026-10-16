@@ -33,11 +33,64 @@ const GuideScreen =()=> {
                 </View>
             </View>
             <View style={global.content}>
+                {/*------------------------- botões -------------------------*/}
                 <View style={global.group}>
                     <Pressable style={guide.button}>
                         <Text style={global.text}>App da UNISO</Text>
                     </Pressable>
                 </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Moodle</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Wi-Fi do aluno</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Laboratórios de informática</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Biblioteca A</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Biblioteca Virtual</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Normalização de Trabalhos Acadêmicos</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Pacote Office Online</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Manual do Aluno</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Estágio</Text>
+                    </Pressable>
+                </View>
+                <View style={global.group}>
+                    <Pressable style={guide.button}>
+                        <Text style={global.text}>Atividades complementares</Text>
+                    </Pressable>
+                </View>
+                {/*------------------------- modais -------------------------*/}
+
             </View>
         </ScrollView>
     );

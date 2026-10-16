@@ -6,7 +6,8 @@ interface StudentModel {
     id: number,
     ra: number,
     password: string,
-    name: string
+    name: string,
+    email: string,
     course: CourseModel[],
     photo: string
 };

@@ -5,42 +5,42 @@ import { faAngleLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
-import Sectors from '../../viewmodel/sectorViewModel';
+import ContactViewModel from '../../viewmodel/contactViewModel';
 
 //importando estilo
 import global from '../components/global';
-import service from '../components/service-layout';
+import service from '../components/contact-layout';
 import Functions from '../../services/functions';
 
 //definindo o tipo da navegação para a tela service
-type NavigationProp = StackNavigationProp<RootStackParamList, "service">
+type NavigationProp = StackNavigationProp<RootStackParamList, "contact">
 
 //função principal
-const ServiceScreen =()=> {
+const ContactScreen =()=> {
 
     //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
 
     //criando o objeto setores
-    const sectorsManager = new Sectors;
+    const contactManager = new ContactViewModel();
 
     //criando o objeto functions
     const functions = new Functions();
 
     //dicionário de setores importado do sectorsManager
-    const sectors = sectorsManager.getAll();
+    const contacts = contactManager.getAll();
 
     //lista de componentes 'pressable' de setores
-    const listComponentSectors = [];
+    const listComponentContacts = [];
   
     //laço de repetição para adicionar cada setor a um componente 'pressable'
-    for(let sector in sectors) {
-        const currentSector = sectors[sector];
+    for(let contact in contacts) {
+        const currentContact = contacts[contact];
 
-        listComponentSectors.push(
+        listComponentContacts.push(
             <Pressable style={service.sector} onPress={() => {openURL("localhost/")}}>
-                <Text style={service.name}>{currentSector.name}</Text>
-                <Text style={service.phone}>Telefone: {functions.formatPhone(currentSector.phone)}</Text>              
+                <Text style={service.name}>{currentContact.name}</Text>
+                <Text style={service.phone}>Telefone: {functions.formatPhone(currentContact.phone)}</Text>              
             </Pressable>     
         );
     };
@@ -64,7 +64,7 @@ const ServiceScreen =()=> {
             </View>
             <View style={global.content}>
                 <View style={{}}>    
-                    {listComponentSectors}
+                    {listComponentContacts}
                 </View>
             </View>
         </ScrollView>
@@ -72,4 +72,4 @@ const ServiceScreen =()=> {
 };
 
 //exportando função principal
-export default ServiceScreen;
+export default ContactScreen;

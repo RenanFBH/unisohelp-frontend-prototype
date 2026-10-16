@@ -5,7 +5,7 @@ import { StyleSheet, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 //função de css global
-const service = StyleSheet.create({ 
+const contact = StyleSheet.create({ 
 
   sector: {
     marginTop: 15,
@@ -16,6 +16,7 @@ const service = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 18,
     borderColor: "rgba(30, 58, 186, 0.3)",
+    width: width * 0.9,
   },
   name: {
     color: "#1E3ABA",
@@ -28,17 +29,10 @@ const service = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
   },
-  separator: {
-    backgroundColor: "#1E3ABA",
-    opacity: 0.3,
-    minHeight: 1,
-    minWidth: 1,
-    marginTop: 10,
-    marginBottom: 10,
-  }
+  
 
 
 });
 
 //exportando função principal
-export default service;
+export default contact;

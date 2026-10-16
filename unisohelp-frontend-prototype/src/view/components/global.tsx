@@ -16,10 +16,11 @@ const global = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",   
+    marginBottom: 20,
   },
   //cabeçalho
   header: {
-    height: height * 0.2,
+    height: height * 0.19,
     backgroundColor: "#fff",
     borderBottomStartRadius: 15,
     borderBottomEndRadius: 15,
