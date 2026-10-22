@@ -10,16 +10,29 @@ class Functions {
     };
 
     formatPositions(position: string) {
-        const p = position.split(" ");
         let positionFormatted = "";
+        const p = position.split(" ");
         for (let i = 0; i < p.length; i++) {
-            if (i == p.length - 1 || i == 0) {
+            if (i === p.length - 1 || i === 0) {
                 positionFormatted += p[i];
                 continue
             }
             positionFormatted += ", " + p[i];
         }
         return positionFormatted.toString();
+    }
+
+    formatEmployeeName(name: string) {
+        let employeeNameFormatted = "";
+        const n = name.split(" ");
+        for (let i = 1; i < n.length; i++) {
+            if (i != 1) {
+                employeeNameFormatted += " " + n[i];
+                continue;
+            } 
+            employeeNameFormatted += n[i];
+        }
+        return employeeNameFormatted.toLowerCase();
     }
 
 };

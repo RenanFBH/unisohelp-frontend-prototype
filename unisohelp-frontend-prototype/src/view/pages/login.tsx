@@ -1,6 +1,6 @@
 //importando elementos essenciais
 import * as React from 'react';
-import { View, Text, Image, TextInput, Pressable, KeyboardAvoidingView, Alert, Platform, ScrollView } from 'react-native';
+import { View, Text, Image, TextInput, Pressable, KeyboardAvoidingView, Alert } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';

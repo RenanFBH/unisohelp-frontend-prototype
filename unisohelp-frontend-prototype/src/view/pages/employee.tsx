@@ -1,4 +1,5 @@
 //importando elementos essenciais
+import { useState } from 'react';
 import { View, ScrollView, Text, Pressable, Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faAngleLeft, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -9,10 +10,12 @@ import { TextInput } from 'react-native-gesture-handler';
 import EmployeeViewModel from '../../viewmodel/employeeViewModel';
 import PositionViewModel from '../../viewmodel/positionViewModel';
 import Functions from '../../services/functions';
+import { useEffect } from 'react';
 
 //importando estilo
 import global from '../components/global';
 import employee from '../components/employee-layout';
+import EmployeeModel from '../../model/employeeModel';
 
 //definindo o tipo da navegação para a tela employees
 type NavigationProp = StackNavigationProp<RootStackParamList, "employee">
@@ -27,38 +30,55 @@ const EmployeeScreen =()=> {
     const employeeManager = new EmployeeViewModel();
     const positionManager = new PositionViewModel();
 
-    //dicionário de funcionários importado do employeeManager
-    const employees = employeeManager.getAll();
+    //variável de funcionários
+    const [employeesList, setEmployeesList] = useState<Record<number, EmployeeModel>>({});
 
-    //lista de componentes 'view' de funcionários
-    const listComponentEmployee = [];
-  
-    //laço de repetição para adicionar cada funcionário a um componente 'view'
-    for(let e in employees) {
-        const currentEmployee = employees[e];
+    //criando componente para tornar a lista de funcionários dinâmica 
+    useEffect(() => { 
+        setEmployeesList(employeeManager.getAll()); 
+    },[]);
 
-        let positions = "";
-        for (let positionId = 0; positionId < currentEmployee.position.length; positionId++) {
-            positions += positionManager.getById(currentEmployee.position[positionId]?.id)?.description + " "
+    //função para adicionar cada funcionário a um componente 'view'
+    const renderEmployees = (employees: Record<number, EmployeeModel>) => {
+        const listComponentEmployee = [];
+
+        for (let e in employees) {
+            const currentEmployee = employees[e];
+
+            let positions = "";
+            for (let positionId = 0; positionId < currentEmployee.position.length; positionId++) {
+                positions += positionManager.getById(currentEmployee.position[positionId]?.id)?.description + " ";
+            }
+
+            const functions = new Functions();
+            positions = functions.formatPositions(positions);
+
+            listComponentEmployee.push(
+                <View style={employee.employee} key={e}>
+                    <Image style={employee.photo} source={require("../../../assets/img/profile/default.png")}/>
+                    <View style={employee.data}>
+                        <Text style={employee.position}>{positions}</Text>
+                        <Text style={employee.name}>{currentEmployee.name}</Text>
+                        <Text style={employee.email}>{currentEmployee.email}</Text>    
+                        <View style={employee.separator}></View> 
+                    </View>
+                </View>     
+            );
         }
+        return listComponentEmployee;
+    };
 
-        const functions = new Functions();
+    //variáveis do formulário de pesquisa
+    const [search, setSearch] = useState("");
 
-        positions = functions.formatPositions(positions);
-        
-        listComponentEmployee.push(
-            <View style={employee.employee}>
-                
-                <Image style={employee.photo} source={require("../../../assets/img/profile/default.png")}/>
-                <View style={employee.data}>
-                    <Text style={employee.position}>{positions}</Text>
-                    <Text style={employee.name}>{currentEmployee.name}</Text>
-                    <Text style={employee.email}>{currentEmployee.email}</Text>    
-                    <View style={employee.separator}></View> 
-                </View>
-            </View>     
-        );
-        
+    //função para pesquisar funcionários
+    const employeesFound = (search: string) => {
+        if (search.trim() === "") {
+            setEmployeesList(employeeManager.getAll());
+            return;
+        } 
+        setEmployeesList(employeeManager.getByName(search));
+        return;
     };
 
     //visual da página employees
@@ -76,13 +96,13 @@ const EmployeeScreen =()=> {
             </View>
             <View style={global.content}>
                 <View style={employee.filter}>
-                    <TextInput style={employee.input} placeholder="Pesquisar" />
-                    <Pressable style={employee.button} onPress={() => {}}>
+                    <TextInput style={employee.input} placeholder="Pesquisar por nome completo" onChangeText={(text) => {setSearch(text)}}/>
+                    <Pressable style={employee.button} onPress={() => {employeesFound(search)}}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} size={20} style={{color: "#fff",}}/>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    {listComponentEmployee}
+                    {renderEmployees(employeesList)}
                 </View>
             </View>
         </ScrollView>
