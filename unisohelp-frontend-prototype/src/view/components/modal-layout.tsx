@@ -1,6 +1,9 @@
 //importando elementos essenciais
 import { StyleSheet, Dimensions } from "react-native";
 
+//importando tema
+import theme from "./theme";
+
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
@@ -8,7 +11,7 @@ const { width, height } = Dimensions.get("window");
 const modal = StyleSheet.create({ 
 
   background: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: theme.colors.backgroundOpacity,
     height: height,
     width: width,
     alignItems: "center",
@@ -17,8 +20,9 @@ const modal = StyleSheet.create({
     zIndex: 1000,
   },
   card: {
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.primary,
     borderRadius: 20,
+    justifyContent: "center",
   },
   scroll: {
     padding: 30,
@@ -34,7 +38,7 @@ const modal = StyleSheet.create({
     
   },
   title: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 20,
     fontWeight: 700,
   },
@@ -46,7 +50,7 @@ const modal = StyleSheet.create({
     marginTop: 20,
   },
   subtitle: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 18,
     fontWeight: 600,
     textAlign: "center",
@@ -54,21 +58,27 @@ const modal = StyleSheet.create({
     marginBottom: 10,
   },
   text: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 18,
     fontWeight: 500,
     marginTop: 10,
     marginBottom: 10,
   },
   button: {
-    backgroundColor: "#FFF4BF",
+    backgroundColor: theme.colors.secondary,
     borderRadius: 50,
     padding: 10,
     marginTop: 5,
     marginBottom: 5,
   },
-  textButtonAndLink: {
-    color: "#1E3ABA",
+  textButton: {
+    color: theme.colors.buttonGuideModal,
+    fontSize: 18,
+    fontWeight: 600,
+    textAlign: "center",
+  },
+  textLink: {
+    color: theme.colors.linkGuideModal,
     fontSize: 18,
     fontWeight: 600,
     textAlign: "center",

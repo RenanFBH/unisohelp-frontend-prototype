@@ -12,15 +12,20 @@ import { ScrollView } from "react-native-gesture-handler";
 //instanciando functions
 const functions = new Functions();
 
+//
+type ModalProps = {
+    onClose: () => void;
+};
+
 //modal do App do Aluno
-const AppDoAluno =()=> {
+const AppDoAluno =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
         <ScrollView style={modal.scroll}>
           <View style={modal.header}>
             <Text style={modal.title}>App da UNISO</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
@@ -28,17 +33,17 @@ const AppDoAluno =()=> {
             <Text style={modal.subtitle}>Smartphone</Text>
             <Text style={modal.text}>1° Instale o aplicativo do aluno.</Text>
             <Pressable style={modal.button} onPress={() => {functions.openURL("https://play.google.com/store/apps/details?id=com.uniso.appaluno&hl=pt_BR")}}>
-              <Text style={modal.textButtonAndLink}>Play Store</Text>
+              <Text style={modal.textButton}>Play Store</Text>
             </Pressable>
             <Pressable style={modal.button} onPress={() => {functions.openURL("https://apps.apple.com/br/app/uniso/id1007008585")}}>
-              <Text style={modal.textButtonAndLink}>App Store</Text>
+              <Text style={modal.textButton}>App Store</Text>
             </Pressable>
             <Text style={modal.text}>2° Abra o aplicativo instalado.</Text>
             <Text style={modal.text}>3° Faça o login inserindo o RA* no campo de usuário e o RG** na senha.</Text>
             <Text style={modal.subtitle}>Desktop/Laptop</Text>
             <Text style={modal.text}>1° Acesse o link abaixo.</Text>
             <Pressable onPress={() => {functions.openURL("https://sistema.uniso.br/appaluno/dashboard")}}>
-              <Text style={modal.textButtonAndLink}>https://sistema.uniso.br/appaluno/</Text>
+              <Text style={modal.textLink}>https://sistema.uniso.br/appaluno/</Text>
             </Pressable>
             <Text style={modal.text}>2° Faça o login inserindo o RA* no campo de usuário e o RG** na senha.</Text>
             <Text style={modal.text}>*RA está disponível no documento de matrícula, na tela inicial e nas configurações do aplicativo.</Text>
@@ -51,14 +56,14 @@ const AppDoAluno =()=> {
 };
 
 //modal do UNISO Virtual
-const UNISOVirtual =()=> {
+const UNISOVirtual =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>UNISO Virtual (Moodle)</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
@@ -66,10 +71,10 @@ const UNISOVirtual =()=> {
             <Text style={modal.subtitle}>Smartphone</Text>
             <Text style={modal.text}>1° Instale o aplicativo do aluno.</Text>
             <Pressable style={modal.button} onPress={() => {functions.openURL("https://play.google.com/store/apps/details?id=com.uniso.appaluno&hl=pt_BR")}}>
-              <Text style={modal.textButtonAndLink}>Play Store</Text>
+              <Text style={modal.textButton}>Play Store</Text>
             </Pressable>
             <Pressable style={modal.button} onPress={() => {functions.openURL("https://apps.apple.com/br/app/uniso/id1007008585")}}>
-              <Text style={modal.textButtonAndLink}>App Store</Text>
+              <Text style={modal.textButton}>App Store</Text>
             </Pressable>
             <Text style={modal.text}>2° Abra o aplicativo instalado.</Text>
             <Text style={modal.text}>3° Selecione a opção estudante.</Text>
@@ -78,7 +83,7 @@ const UNISOVirtual =()=> {
             <Text style={modal.subtitle}>Desktop/Laptop</Text>
             <Text style={modal.text}>1° Acesse o link abaixo.</Text>
             <Pressable onPress={() => {functions.openURL("https://ead.uniso.br/login/uniso/login.html")}}>
-              <Text style={modal.textButtonAndLink}>https://ead.uniso.br/login/uniso/login.html</Text>
+              <Text style={modal.textLink}>https://ead.uniso.br/login/uniso/login.html</Text>
             </Pressable>
             <Text style={modal.text}>2° Faça o login inserindo o RA* no campo de usuário e o CPF** na senha.</Text>
             <Text style={modal.text}>*RA está disponível no documento de matrícula, na tela inicial e nas configurações do aplicativo.</Text>
@@ -91,14 +96,14 @@ const UNISOVirtual =()=> {
 };
 
 //modal do Wifi do Aluno
-const WifiDoAluno =()=> {
+const WifiDoAluno =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>Wi-Fi do Aluno</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
@@ -116,14 +121,14 @@ const WifiDoAluno =()=> {
 };
 
 //modal dos Laboratórios de Informática
-const LabInformatica =()=> {
+const LabInformatica =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>Laboratórios de Informática</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
@@ -137,14 +142,14 @@ const LabInformatica =()=> {
 };
 
 //modal da Biblioteca A
-const BibliotecaA =()=> {
+const BibliotecaA =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>Biblioteca A</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
@@ -152,7 +157,7 @@ const BibliotecaA =()=> {
             <Text style={modal.subtitle}>Primeiro acesso - Desktop/Laptop</Text>
             <Text style={modal.text}>1° Acesse o site da UNISO.</Text>
             <Pressable onPress={() => {functions.openURL("https://uniso.br/")}}>
-              <Text style={modal.textButtonAndLink}>https://uniso.br/</Text>
+              <Text style={modal.textLink}>https://uniso.br/</Text>
             </Pressable>
             <Text style={modal.text}>2° Selecione “Área do aluno”.</Text>
             <Text style={modal.text}>3° Clique em “Acessos Acadêmicos - App do Aluno”.</Text>
@@ -166,16 +171,16 @@ const BibliotecaA =()=> {
             <Text style={modal.subtitle}>Smartphone</Text>
             <Text style={modal.text}>1° Com a senha alterada instale o aplicativo Biblioteca a+.</Text>
             <Pressable style={modal.button} onPress={() => {functions.openURL("https://play.google.com/store/apps/details?id=com.binpar.bibliotecaarg&hl=pt_BR")}}>
-              <Text style={modal.textButtonAndLink}>Play Store</Text>
+              <Text style={modal.textButton}>Play Store</Text>
             </Pressable>
             <Pressable style={modal.button} onPress={() => {functions.openURL("https://apps.apple.com/us/app/biblioteca-a/id6444824032")}}>
-              <Text style={modal.textButtonAndLink}>App Store</Text>
+              <Text style={modal.textButton}>App Store</Text>
             </Pressable>
             <Text style={modal.text}>2° Faça login com os dados cadastrados no primeiro acesso.</Text>
             <Text style={modal.subtitle}>Desktop/Laptop</Text>
             <Text style={modal.text}>1° Acesse o link abaixo.</Text>
             <Pressable onPress={() => {functions.openURL("https://login.read.garden/pt/login?token=cGbhJyezUIJiOiIsIiN1I6ICc5RnJCVXpkIdqJye.9yNWZTR3IiOiQXZDcVJ3Zqdk4SQtAq42MrBD9GbiwiImcQ5WanclRWa29dtlOiMn9mcwJCLmT0NWZqI6ISZtFpxmYpJkE2YlR3bnIsISYtYlp2byBnVHbTR3J3ZiojISYt8Gc1dlJnIsIyVlbyVHhmI6ICbiOzBHd0bilmYv8jVGdvlGJnLh1SY2ZuQWYlIuVGZyFylGZiwiNXd0NWZmOiwmcVIswGb15jVmcpRm9GVzVHdmOi4WZrIswGb15lZnclNnRXdvJlcHaiojIlL6MHc0RsJWai9yNWZ09WamcuEWLhYn5CZhVv4WZkJXwiIyJTYXanVmcicVJXZ0N15mOiwmVnIswGbWYNJXZzcVxWY1515mOiwmNmIswGbWbvR3c1bpRXY6lisnOi42VGZhVGaHaiojIyL6MHc0RsJWai9yNWZ09WamcuEWLhYn5CZhVv4WZkJXd2Ln1WaWLvBXdyZhVGavE2NnLyVGhmIsIyZkclRWYlQldWYtliojI0xWlGbilmQSYjVGdvciwiIh1yFWbpJH9GbvNUezIiojIyQzM0MENlNnIsIyFGZu92YGbvNUeyIiojIy9BZTQGZ0ZmIsISQWYGRnbvOikHbp1iJWaHJihmIsIyckclRWYlbs92QnJjIiOiI3MTOzI2MmIs0nI5ZjlmdlRldnI6ISRmIsIiYXZjlmdlam52bDN9tnOicWQXYpJCLzN3EjOiNwYTOxkQFY.9hTE-Hc5Iz2anLDloaDxB2rrf3vJ73pf8W0uHgOUB-o")}}>
-              <Text style={modal.textButtonAndLink}>Biblioteca-a | Login</Text>
+              <Text style={modal.textLink}>Biblioteca-a | Login</Text>
             </Pressable>
             <Text style={modal.text}>2° Faça o login inserindo o e-mail e senha cadastrados no primeiro acesso.</Text>
             <Text style={modal.text}>*RA está disponível no documento de matrícula, na tela inicial e nas configurações do aplicativo.</Text>
@@ -188,21 +193,21 @@ const BibliotecaA =()=> {
 };
 
 //modal do Microsoft 365
-const Microsoft =()=> {
+const Microsoft =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>Microsoft 365</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
           <View style={modal.content}>
             <Text style={modal.text}>1° Acesse o link abaixo.</Text>
             <Pressable onPress={() => {functions.openURL("https://www.microsoft.com/pt-br/microsoft-365/microsoft-office")}}>
-              <Text style={modal.textButtonAndLink}>https://www.microsoft.com/pt-br/microsoft-365/microsoft-office</Text>
+              <Text style={modal.textLink}>https://www.microsoft.com/pt-br/microsoft-365/microsoft-office</Text>
             </Pressable>
             <Text style={modal.text}>2° Selecione a opção “Entrar”.</Text>
             <Text style={modal.text}>3° Digite o seu e-mail institucional*.</Text>
@@ -217,14 +222,14 @@ const Microsoft =()=> {
 };
 
 //modal das Atividades complementares
-const AtividadesComplementares =()=> {
+const AtividadesComplementares =({ onClose }: ModalProps)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>Atividades complementares</Text>
-            <Pressable style={modal.close}>
+            <Pressable style={modal.close} onPress={onClose}>
               <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
             </Pressable>
           </View>
@@ -245,7 +250,7 @@ const Error =(e: string)=> {
   return (
     <View style={modal.background}>
       <View style={modal.card}>
-        <ScrollView style={modal.scroll}>
+        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
             <Text style={modal.title}>Erro: {e}</Text>
             <Pressable style={modal.close}>
