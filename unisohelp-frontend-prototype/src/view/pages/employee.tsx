@@ -12,6 +12,9 @@ import PositionViewModel from '../../viewmodel/positionViewModel';
 import Functions from '../../services/functions';
 import { useEffect } from 'react';
 
+//importando tema
+import theme from '../components/theme';
+
 //importando estilo
 import global from '../components/global';
 import employee from '../components/employee-layout';
@@ -88,7 +91,7 @@ const EmployeeScreen =()=> {
                 <View style={global.titleAndSubtitleView}>
                     <View style={global.button}>
                         <Pressable onPress={() => {navigation.pop()}}>
-                            <FontAwesomeIcon icon={faAngleLeft} size={30} style={{color: "#1e3aba",}}/>
+                            <FontAwesomeIcon icon={faAngleLeft} size={30} style={global.iconTheme}/>
                         </Pressable>
                     </View>
                     <Text style={global.title}>Corpo Docente</Text>
@@ -96,9 +99,9 @@ const EmployeeScreen =()=> {
             </View>
             <View style={global.content}>
                 <View style={employee.filter}>
-                    <TextInput style={employee.input} placeholder="Pesquisar por nome completo" onChangeText={(text) => {setSearch(text)}}/>
+                    <TextInput style={employee.input} placeholder="Pesquisar por nome completo" placeholderTextColor={theme.colors.secondary} onChangeText={(text) => {setSearch(text)}}/>
                     <Pressable style={employee.button} onPress={() => {employeesFound(search)}}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} size={20} style={{color: "#fff",}}/>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} size={20} style={global.iconTheme2}/>
                     </Pressable>
                 </View>
                 <View style={global.group}>

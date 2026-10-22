@@ -1,6 +1,9 @@
 //importando elementos essenciais
 import { StyleSheet, Dimensions } from "react-native";
 
+//importando tema
+import theme from "./theme";
+
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
@@ -9,7 +12,7 @@ const login = StyleSheet.create({
 
   header: {
     height: height * 0.2,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.primary,
     borderBottomStartRadius: 15,
     borderBottomEndRadius: 15,
     paddingTop: height * 0.08,
@@ -24,12 +27,12 @@ const login = StyleSheet.create({
     flex:1,
   },
   titleHeader: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 30,
     fontWeight: 700,
   },
   subtitleHeader: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 20,
     fontWeight: 400,
   },
@@ -37,7 +40,7 @@ const login = StyleSheet.create({
   card: {
     width: width * 0.9,
     height: height * 0.43,
-    backgroundColor: "#ffff",
+    backgroundColor: theme.colors.primary,
     marginTop: height * 0.1,
     marginBottom: height * 0.25,
     borderRadius: 17, 
@@ -47,7 +50,7 @@ const login = StyleSheet.create({
     flex: 1,
   },
    titleCard: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 30,
     fontWeight: 700,
   },
@@ -62,7 +65,8 @@ const login = StyleSheet.create({
     height: height * 0.06,
     fontSize: 20,
     borderWidth: 2,
-    borderColor: "#1E3ABA",
+    color: theme.colors.secondary,
+    borderColor: theme.colors.secondary,
     borderRadius: 15,
     margin: 10,
     padding: 10,
@@ -83,11 +87,11 @@ const login = StyleSheet.create({
     alignItems: "center",
   },
   textRememberCard: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 17,
   },
   textQuestionsCard: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 17,
   },
   questionsCard: {
@@ -102,23 +106,17 @@ const login = StyleSheet.create({
   buttonCard: {
     width: width * 0.8,
     height: height * 0.06,
-    backgroundColor: "#FFD000",
+    backgroundColor: theme.colors.quaternary,
     borderWidth: 2,
-    borderColor: "#1E3ABA",
+    borderColor: theme.colors.secondary,
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
   },
   textButtonCard: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 20,
   },
-  error: {
-    color: "#CC0000",
-    fontSize: 15,
-    
-  }
-  
 });
 
 //exportando função principal

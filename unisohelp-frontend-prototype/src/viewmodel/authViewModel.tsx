@@ -39,7 +39,9 @@ class Authentication {
     //função de validar logout
     Logout =()=> {
         if (Platform.OS === "web") {
+            const theme = localStorage.getItem("theme") ?? "main";
             localStorage.clear();
+            localStorage.setItem("theme", theme);
         }
     };
 

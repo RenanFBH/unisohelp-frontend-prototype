@@ -1,6 +1,9 @@
 //importando elementos essenciais
 import { StyleSheet, Dimensions } from "react-native";
 
+//importando tema
+import theme from "./theme";
+
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
@@ -13,10 +16,11 @@ const employee = StyleSheet.create({
     justifyContent: "center"
   },
   input: {
-    backgroundColor: "#fff",
+    color: theme.colors.secondary,
+    backgroundColor: theme.colors.primary,
     borderWidth: 1,
     borderRadius: 15,
-    borderColor: "#1E3ABA",
+    borderColor: theme.colors.secondary,
     padding: 10,
     fontSize: 17,
     width: width * 0.9,
@@ -30,14 +34,14 @@ const employee = StyleSheet.create({
     width: width * 0.1,
     borderWidth: 1,
     borderRadius: 15,
-    borderColor: "#1E3ABA",
-    backgroundColor: "#1E3ABA",
+    borderColor: theme.colors.secondary,
+    backgroundColor: theme.colors.secondary,
     justifyContent: "center",
     alignItems: "center"
 
   },
   icon: {
-    color: "#fff",
+    color: theme.colors.primary,
   },
   employee: {
     marginTop: 15,
@@ -51,31 +55,31 @@ const employee = StyleSheet.create({
     width: 70,
     borderWidth: 1,
     borderRadius: 360,
-    borderColor: "#1E3ABA",
+    borderColor: theme.colors.secondary,
     marginRight: 7,
   },
   data: {
     marginLeft: 7,
   },
   position: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 15,
   },
   name: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 18,
   },
   email: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 15,
   },
   separator: {
-    backgroundColor: "#1E3ABA",
+    backgroundColor: theme.colors.secondary,
     height: height * 0.001,
     width: width * 0.6,
   }
   
-})
+});
 
 //exportando função principal
 export default employee;

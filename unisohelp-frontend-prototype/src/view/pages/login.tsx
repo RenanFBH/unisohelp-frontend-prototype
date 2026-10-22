@@ -7,6 +7,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
 import Authentication from '../../viewmodel/authViewModel';
 
+//importando tema
+import theme from '../components/theme';
+
 //importando estilo
 import global from '../components/global';
 import login from '../components/login-layout';
@@ -41,7 +44,7 @@ const LoginScreen =()=> {
 
   //visual da página login
   return (
-    <KeyboardAvoidingView contentContainerStyle={global.background} behavior="position" enabled>
+    <View style={global.background}>
         <View style={login.header}>
           <Image style={global.iconHeader} source={require('../../../assets/img/unisoIcon.png')} />
           <View style={login.titleAndSubtitleView}>
@@ -55,8 +58,8 @@ const LoginScreen =()=> {
               <Text style={login.titleCard}>Login</Text>
             </View>
             <View style={login.contentCard}>
-              <TextInput style={login.inputCard} placeholder="RA" onChangeText={(text) => {setRa(text)}}/>
-              <TextInput style={login.inputCard} placeholder="Senha" secureTextEntry={true} onChangeText={(text) => {setPassword(text)}}/>
+              <TextInput style={login.inputCard} placeholder="RA" placeholderTextColor={theme.colors.secondary} onChangeText={(text) => {setRa(text)}}/>
+              <TextInput style={login.inputCard} placeholder="Senha" placeholderTextColor={theme.colors.secondary} secureTextEntry={true} onChangeText={(text) => {setPassword(text)}}/>
             </View>
             <View style={login.footerCard}>
               <View style={login.optionsCard}>
@@ -65,8 +68,8 @@ const LoginScreen =()=> {
                     value="unchecked"
                     status={ remember === "checked" ? "checked" : "unchecked" } 
                     onPress={ remember === "checked" ? () => {setRemember("unchecked")} : () => {setRemember("checked")} }
-                    color="#1E3ABA"
-                    uncheckedColor="#ccc"
+                    color={theme.colors.secondary}
+                    uncheckedColor={theme.colors.secondary}
                   />
                   <Text style={login.textRememberCard}>Lembrar-me</Text>
                 </View>
@@ -87,7 +90,7 @@ const LoginScreen =()=> {
             </View>
           </View>
         </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 

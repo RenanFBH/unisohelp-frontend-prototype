@@ -1,6 +1,9 @@
 //importando elementos essenciais
 import { StyleSheet, Dimensions } from "react-native";
 
+//importando tema
+import theme from "./theme";
+
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
@@ -10,10 +13,10 @@ const accessibility = StyleSheet.create({
   button: {
     minHeight:  height * 0.08,
     minWidth: width * 0.9,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.primary,
     borderWidth: 1,
     borderRadius: 27,
-    borderColor: "#1E3ABA",
+    borderColor: theme.colors.secondary,
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
@@ -23,6 +26,7 @@ const accessibility = StyleSheet.create({
     marginRight: width * 0.5,
     position: "absolute",
   },
+  
   
 });
 

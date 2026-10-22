@@ -41,7 +41,7 @@ const ContactScreen =()=> {
         const currentContact = contacts[c];
 
         listComponentContacts.push(
-            <Pressable style={contact.sector} onPress={() => {functions.openURL("")}}>
+            <Pressable style={contact.sector} onPress={() => {}}>
                 <Text style={contact.name}>{currentContact.name}</Text>
                 <Text style={contact.phone}>Telefone: {functions.formatPhone(currentContact.phone)}</Text>              
             </Pressable>     
@@ -55,10 +55,10 @@ const ContactScreen =()=> {
                 <View style={global.titleAndSubtitleView}>
                     <View style={global.button}>
                         <Pressable onPress={() => {navigation.pop()}}>
-                            <FontAwesomeIcon icon={faAngleLeft} size={30} style={{color: "#1e3aba",}}/>
+                            <FontAwesomeIcon icon={faAngleLeft} size={30} style={global.iconTheme}/>
                         </Pressable>
                     </View>
-                    <Text style={global.title}>Atendimento</Text>
+                    <Text style={global.title}>Contatos</Text>
                 </View>
             </View>
             <View style={global.content}>

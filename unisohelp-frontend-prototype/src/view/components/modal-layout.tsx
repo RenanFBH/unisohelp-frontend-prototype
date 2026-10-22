@@ -9,18 +9,22 @@ const modal = StyleSheet.create({
 
   background: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    height: height * 1,
-    width: width * 1,
-    textAlign: "center",
+    height: height,
+    width: width,
+    alignItems: "center",
     justifyContent: "center",
+    position: "absolute",
+    zIndex: 1000,
   },
   card: {
     backgroundColor: "#fff",
-    padding: 30,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 100,
     borderRadius: 20,
+  },
+  scroll: {
+    padding: 30,
+    borderRadius: 20,
+    height: height * 0.4,
+    width: width * 0.95,
   },
   header: {
     flex: 1,

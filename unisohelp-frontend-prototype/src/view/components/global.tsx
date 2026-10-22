@@ -1,16 +1,19 @@
 //importando elementos essenciais
 import { StyleSheet, Dimensions } from "react-native";
 
+//importando tema
+import theme from "./theme";
+
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
 //função de css global
 const global = StyleSheet.create({
-
+  
   background: {
     width: width * 1,
     height: height * 1,
-    backgroundColor:"#EEE",
+    backgroundColor: theme.colors.tertiary,
   },  
   content: {
     flex: 1,
@@ -21,7 +24,7 @@ const global = StyleSheet.create({
   //cabeçalho
   header: {
     height: height * 0.18,
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.primary,
     borderBottomStartRadius: 15,
     borderBottomEndRadius: 15,
     paddingTop: height * 0.07,
@@ -43,7 +46,7 @@ const global = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 20,
     fontWeight: 700,
   },
@@ -59,13 +62,19 @@ const global = StyleSheet.create({
     paddingTop: 15,
   },
   icon: {  
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     marginRight: width * 0.65,
     position: "absolute",
   },
   text: {
-    color: "#1E3ABA",
+    color: theme.colors.secondary,
     fontSize: 20,
+  },
+  iconTheme: {
+    color: theme.colors.secondary,
+  },
+  iconTheme2: {
+    color: theme.colors.primary,
   },
 
 })

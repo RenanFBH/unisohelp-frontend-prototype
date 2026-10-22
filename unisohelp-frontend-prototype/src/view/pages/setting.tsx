@@ -40,7 +40,7 @@ const SettingsScreen =()=> {
                 <View style={global.titleAndSubtitleView}>
                     <View style={global.button}>
                         <Pressable onPress={() => {navigation.pop()}}>
-                            <FontAwesomeIcon icon={faAngleLeft} size={30} style={{color: "#1e3aba",}}/>
+                            <FontAwesomeIcon icon={faAngleLeft} size={30} style={global.iconTheme}/>
                         </Pressable>
                     </View>
                     <Text style={global.title}>Configurações</Text>
