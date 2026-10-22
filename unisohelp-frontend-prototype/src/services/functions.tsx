@@ -1,3 +1,7 @@
+//importando elementos essenciais
+import { Linking } from "react-native";
+
+//classe que contém funções gerais
 class Functions {
 
     formatPhone(phone: number) {
@@ -20,7 +24,7 @@ class Functions {
             positionFormatted += ", " + p[i];
         }
         return positionFormatted.toString();
-    }
+    };
 
     formatEmployeeName(name: string) {
         let employeeNameFormatted = "";
@@ -33,9 +37,14 @@ class Functions {
             employeeNameFormatted += n[i];
         }
         return employeeNameFormatted.toLowerCase();
-    }
+    };
+
+    //função para abrir urls
+    openURL(url: string) {
+        Linking.openURL(url);
+    };
 
 };
 
+//exportando classe
 export default Functions;
-

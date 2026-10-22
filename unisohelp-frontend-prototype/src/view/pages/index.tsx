@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
 import { Platform } from 'react-native';
+import Functions from '../../services/functions';
 
 //importando estilo
 import global from '../components/global';
@@ -19,6 +20,9 @@ const IndexScreen = () => {
 
   //tipando o hook useNavigation com o tipo NavigationProp
   const navigation = useNavigation<NavigationProp>();
+
+  //instanciando functions
+  const functions = new Functions();
 
   //Criando userName e userRa e verificando se o dispositivo for web atribui os valores do localStorage, se for outros, userName é definido como Teste e userRa como 100001
   let userName: string = "Teste";
@@ -48,9 +52,6 @@ const IndexScreen = () => {
   const btnCalendars =()=> {
     navigation.navigate("calendar");
   };
-  const btnMap =(url: string)=> {
-    Linking.openURL(url);
-  }
   const btnSettings =()=> {
     navigation.navigate("setting");
   };
@@ -97,7 +98,7 @@ const IndexScreen = () => {
           </Pressable>
         </View>
         <View style={global.group}>
-          <Pressable style={index.button} onPress={() => {btnMap("https://unisomap.ntiuniso.com.br/index.html")}}>
+          <Pressable style={index.button} onPress={() => {functions.openURL("https://unisomap.ntiuniso.com.br/index.html")}}>
             <FontAwesomeIcon icon={faMap} size={30} style={global.icon} />
             <Text style={global.text}>Mapa do câmpus</Text>
           </Pressable>

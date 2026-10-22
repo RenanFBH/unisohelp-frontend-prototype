@@ -5,6 +5,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
+import Functions from '../../services/functions';
 
 //importando estilo
 import global from '../components/global';
@@ -13,10 +14,9 @@ import calendar from '../components/calendar-layout';
 //definindo o tipo da navegação para a tela calendars
 type NavigationProp = StackNavigationProp<RootStackParamList, "calendar">
 
-//função para abrir links
-const openURL =(url: string)=> {
-    Linking.openURL(url);
-}
+//instanciando functions
+const functions = new Functions();
+
 
 //função principal
 const CalendarScreen =()=> {
@@ -39,17 +39,17 @@ const CalendarScreen =()=> {
             </View>
             <View style={global.content}>
                 <View style={global.group}>
-                    <Pressable style={calendar.button} onPress={() => {openURL('https://sistema.uniso.br/barcode/calendario-academico-graduacao.pdf')}}>
+                    <Pressable style={calendar.button} onPress={() => {functions.openURL('https://sistema.uniso.br/barcode/calendario-academico-graduacao.pdf')}}>
                         <Text style={global.text}>Calendário Presencial</Text>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    <Pressable style={calendar.button} onPress={() => {openURL('https://sistema.uniso.br/barcode/calendario-academico-graduacao-ead.pdf')}}>
+                    <Pressable style={calendar.button} onPress={() => {functions.openURL('https://sistema.uniso.br/barcode/calendario-academico-graduacao-ead.pdf')}}>
                         <Text style={global.text}>Calendário EAD</Text>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    <Pressable style={calendar.button} onPress={() => {openURL('https://sistema.uniso.br/barcode/calendario-academico-pos-graduacao-stricto-sensu-2026.pdf')}}>
+                    <Pressable style={calendar.button} onPress={() => {functions.openURL('https://sistema.uniso.br/barcode/calendario-academico-pos-graduacao-stricto-sensu-2026.pdf')}}>
                         <Text style={global.text}>Calendário Stricto Sensu</Text>
                     </Pressable>
                 </View>

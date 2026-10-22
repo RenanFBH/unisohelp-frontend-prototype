@@ -12,6 +12,9 @@ import Functions from '../../services/functions';
 import global from '../components/global';
 import contact from '../components/contact-layout';
 
+//instanciando functions
+const functions = new Functions();
+
 //definindo o tipo da navegação para a tela service
 type NavigationProp = StackNavigationProp<RootStackParamList, "contact">
 
@@ -38,16 +41,12 @@ const ContactScreen =()=> {
         const currentContact = contacts[c];
 
         listComponentContacts.push(
-            <Pressable style={contact.sector} onPress={() => {openURL("localhost/")}}>
+            <Pressable style={contact.sector} onPress={() => {functions.openURL("")}}>
                 <Text style={contact.name}>{currentContact.name}</Text>
                 <Text style={contact.phone}>Telefone: {functions.formatPhone(currentContact.phone)}</Text>              
             </Pressable>     
         );
     };
-
-    const openURL =(url: string)=> {
-        Linking.openURL(url);
-    }
 
     //visual da página service
     return(

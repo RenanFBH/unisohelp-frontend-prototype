@@ -36,10 +36,10 @@ const EmployeeScreen =()=> {
     //criando componente para tornar a lista de funcionários dinâmica 
     useEffect(() => { 
         setEmployeesList(employeeManager.getAll()); 
-    },[]);
+    }, []);
 
     //função para adicionar cada funcionário a um componente 'view'
-    const renderEmployees = (employees: Record<number, EmployeeModel>) => {
+    const renderEmployees =(employees: Record<number, EmployeeModel>)=> {
         const listComponentEmployee = [];
 
         for (let e in employees) {

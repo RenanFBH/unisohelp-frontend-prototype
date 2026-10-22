@@ -113,6 +113,11 @@ const login = StyleSheet.create({
     color: "#1E3ABA",
     fontSize: 20,
   },
+  error: {
+    color: "#CC0000",
+    fontSize: 15,
+    
+  }
   
 });
 

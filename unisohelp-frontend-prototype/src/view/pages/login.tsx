@@ -25,6 +25,7 @@ const LoginScreen =()=> {
   const [btnPress, setBtn] = React.useState("unpressed");
   const [ra, setRa] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState(false);
   let name = "Renan";
   
   //função para logar
@@ -32,10 +33,7 @@ const LoginScreen =()=> {
     const auth = new Authentication();
     let response = auth.Login(Number(ra), password, remember);
     if (!response) {
-      Alert.alert(
-        "Erro!",
-        "RA ou senha inválidos!"
-      );
+      
       return false;
     } 
     navigation.navigate("index");

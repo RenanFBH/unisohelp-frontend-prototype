@@ -5,6 +5,10 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
+import Functions from '../../services/functions';
+
+//importando modais
+import {AppDoAluno, UNISOVirtual, WifiDoAluno, LabInformatica, BibliotecaA, Microsoft, AtividadesComplementares, Error} from "./modal";
 
 //importando estilo
 import global from '../components/global';
@@ -18,6 +22,9 @@ const GuideScreen =()=> {
 
     //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
+
+    //instanciando functions
+    const functions = new Functions();
 
     //visual da página guide
     return(
@@ -33,6 +40,7 @@ const GuideScreen =()=> {
                 </View>
             </View>
             <View style={global.content}>
+                <Error/>
                 {/*------------------------- botões -------------------------*/}
                 <View style={global.group}>
                     <Pressable style={guide.button}>
@@ -60,27 +68,27 @@ const GuideScreen =()=> {
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    <Pressable style={guide.button}>
+                    <Pressable style={guide.button} onPress={() => {functions.openURL("https://plataforma.bvirtual.com.br/Account/Login")}}>
                         <Text style={global.text}>Biblioteca Virtual</Text>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    <Pressable style={guide.button}>
+                    <Pressable style={guide.button} onPress={() => {functions.openURL("https://editora.uniso.br/editora/catalog/view/54/42/178")}}>
                         <Text style={global.text}>Normalização de Trabalhos Acadêmicos</Text>
                     </Pressable>
                 </View>
                 <View style={global.group}>
                     <Pressable style={guide.button}>
-                        <Text style={global.text}>Pacote Office Online</Text>
+                        <Text style={global.text}>Microsoft 365</Text>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    <Pressable style={guide.button}>
+                    <Pressable style={guide.button} onPress={() => {functions.openURL("https://uniso.br/arquivos/pdf/manual-do-aluno.pdf")}}>
                         <Text style={global.text}>Manual do Aluno</Text>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    <Pressable style={guide.button}>
+                    <Pressable style={guide.button} onPress={() => {functions.openURL("https://uniso.br/estagio/")}}>
                         <Text style={global.text}>Estágio</Text>
                     </Pressable>
                 </View>
