@@ -1,5 +1,6 @@
 //importando elementos essenciais
 import positionRepository from "../data/repository/positionRepository";
+import PositionModel from "../model/positionModel";
 
 //classe principal
 class PositionViewModel {

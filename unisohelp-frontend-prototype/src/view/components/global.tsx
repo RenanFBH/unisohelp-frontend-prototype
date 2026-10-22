@@ -20,13 +20,13 @@ const global = StyleSheet.create({
   },
   //cabeçalho
   header: {
-    height: height * 0.19,
+    height: height * 0.18,
     backgroundColor: "#fff",
     borderBottomStartRadius: 15,
     borderBottomEndRadius: 15,
-    paddingTop: height * 0.08,
-    paddingLeft: width * 0.1,
-    paddingRight: width * 0.1,
+    paddingTop: height * 0.07,
+    paddingLeft: width * 0.06,
+    paddingRight: width * 0.04,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -56,7 +56,7 @@ const global = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 20,
+    paddingTop: 15,
   },
   icon: {  
     color: "#1E3ABA",

@@ -15,7 +15,7 @@ const contact = StyleSheet.create({
     padding: 15,
     borderWidth: 1,
     borderRadius: 18,
-    borderColor: "rgba(30, 58, 186, 0.3)",
+    borderColor: "rgba(30, 58, 186, 1)",
     width: width * 0.9,
   },
   name: {
@@ -29,8 +29,6 @@ const contact = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
   },
-  
-
 
 });
 

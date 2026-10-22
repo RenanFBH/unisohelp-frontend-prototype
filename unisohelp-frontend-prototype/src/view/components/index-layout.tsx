@@ -17,8 +17,8 @@ const index = StyleSheet.create({
   },
   subtitle: {
     color: "#1E3ABA",
-    fontSize: 20,
-    fontWeight: 400,
+    fontSize: 18,
+    fontWeight: 500,
   },
   photo: {
     width: 60,

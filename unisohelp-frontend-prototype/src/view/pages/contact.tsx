@@ -6,11 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
 import ContactViewModel from '../../viewmodel/contactViewModel';
+import Functions from '../../services/functions';
 
 //importando estilo
 import global from '../components/global';
-import service from '../components/contact-layout';
-import Functions from '../../services/functions';
+import contact from '../components/contact-layout';
 
 //definindo o tipo da navegação para a tela service
 type NavigationProp = StackNavigationProp<RootStackParamList, "contact">
@@ -34,13 +34,13 @@ const ContactScreen =()=> {
     const listComponentContacts = [];
   
     //laço de repetição para adicionar cada setor a um componente 'pressable'
-    for(let contact in contacts) {
-        const currentContact = contacts[contact];
+    for(let c in contacts) {
+        const currentContact = contacts[c];
 
         listComponentContacts.push(
-            <Pressable style={service.sector} onPress={() => {openURL("localhost/")}}>
-                <Text style={service.name}>{currentContact.name}</Text>
-                <Text style={service.phone}>Telefone: {functions.formatPhone(currentContact.phone)}</Text>              
+            <Pressable style={contact.sector} onPress={() => {openURL("localhost/")}}>
+                <Text style={contact.name}>{currentContact.name}</Text>
+                <Text style={contact.phone}>Telefone: {functions.formatPhone(currentContact.phone)}</Text>              
             </Pressable>     
         );
     };

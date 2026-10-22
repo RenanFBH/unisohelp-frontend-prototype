@@ -9,6 +9,19 @@ class Functions {
         return phoneFormatted;
     };
 
+    formatPositions(position: string) {
+        const p = position.split(" ");
+        let positionFormatted = "";
+        for (let i = 0; i < p.length; i++) {
+            if (i == p.length - 1 || i == 0) {
+                positionFormatted += p[i];
+                continue
+            }
+            positionFormatted += ", " + p[i];
+        }
+        return positionFormatted.toString();
+    }
+
 };
 
 export default Functions;

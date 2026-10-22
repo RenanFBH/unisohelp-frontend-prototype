@@ -14,7 +14,7 @@ import SettingScreen from './src/view/pages/setting';
 import AccessibilityScreen from './src/view/pages/accessibility';
 import ProfileScreen from './src/view/pages/profile';
 
-//exportando 
+//exportando rotas tipadas
 export type RootStackParamList  = {
   login: undefined;
   index: undefined;
@@ -28,7 +28,8 @@ export type RootStackParamList  = {
   profile: undefined;
 };
 
-const Stack = createStackNavigator<RootStackParamList >();
+//objeto stack
+const Stack = createStackNavigator<RootStackParamList>();
 
 //função principal
 const Routes =()=> {

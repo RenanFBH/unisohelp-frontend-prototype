@@ -1,5 +1,5 @@
 //importando elementos essenciais
-import { View, ScrollView, Text, Pressable } from 'react-native';
+import { View, ScrollView, Text, Pressable, Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faAngleLeft, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -7,7 +7,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
 import { TextInput } from 'react-native-gesture-handler';
 import EmployeeViewModel from '../../viewmodel/employeeViewModel';
-import { useState } from 'react';
+import PositionViewModel from '../../viewmodel/positionViewModel';
+import Functions from '../../services/functions';
 
 //importando estilo
 import global from '../components/global';
@@ -16,52 +17,48 @@ import employee from '../components/employee-layout';
 //definindo o tipo da navegação para a tela employees
 type NavigationProp = StackNavigationProp<RootStackParamList, "employee">
 
-//criando o objeto setores
-const employeeManager = new EmployeeViewModel();
-
 //função principal
 const EmployeeScreen =()=> {
 
     //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
 
-    //variável de pesquisa
-    const [search, setSearch] = useState("");
-    const [listComponentEmployees, setListComponentEmployees] = useState(() => { return searchEmployees(null) });
-    
-    //função para pesquisar funcionários
-    const searchEmployees =(name: string | null)=> {
+    //criando o objeto funcionários e objeto cargos
+    const employeeManager = new EmployeeViewModel();
+    const positionManager = new PositionViewModel();
 
-        //dicionário de funcionários importado do employeesManager
-        const employees = employeeManager.getAll();
+    //dicionário de funcionários importado do employeeManager
+    const employees = employeeManager.getAll();
 
-        //lista de componentes 'view' de funcionários
-        const temporaryList = [];
+    //lista de componentes 'view' de funcionários
+    const listComponentEmployee = [];
+  
+    //laço de repetição para adicionar cada funcionário a um componente 'view'
+    for(let e in employees) {
+        const currentEmployee = employees[e];
 
-        if (name == null) {
-            for(let employee in employees) {
-                const currentEmployee = employees[employee];
-
-                temporaryList.push(
-                    <View>
-                        <Text>{currentEmployee.name}</Text>
-                    </View>
-                )
-            }
-        } else {
-            for(let employee in employees) {
-                const currentEmployee = employees[employee];
-
-                temporaryList.push(
-                    <View>
-                        <Text>{currentEmployee.name}</Text>
-                    </View>
-                )
-            }
+        let positions = "";
+        for (let positionId = 0; positionId < currentEmployee.position.length; positionId++) {
+            positions += positionManager.getById(currentEmployee.position[positionId]?.id)?.description + " "
         }
-        setListComponentEmployees(temporaryList);
-        return temporaryList;
 
+        const functions = new Functions();
+
+        positions = functions.formatPositions(positions);
+        
+        listComponentEmployee.push(
+            <View style={employee.employee}>
+                
+                <Image style={employee.photo} source={require("../../../assets/img/profile/default.png")}/>
+                <View style={employee.data}>
+                    <Text style={employee.position}>{positions}</Text>
+                    <Text style={employee.name}>{currentEmployee.name}</Text>
+                    <Text style={employee.email}>{currentEmployee.email}</Text>    
+                    <View style={employee.separator}></View> 
+                </View>
+            </View>     
+        );
+        
     };
 
     //visual da página employees
@@ -79,13 +76,13 @@ const EmployeeScreen =()=> {
             </View>
             <View style={global.content}>
                 <View style={employee.filter}>
-                    <TextInput style={employee.input} placeholder="Pesquisar" onChangeText={(text) => {setSearch(text)}}/>
-                    <Pressable style={employee.button} onPress={() => {searchEmployees(search)}}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} size={20} style={{color: "#1e3aba",}}/>
+                    <TextInput style={employee.input} placeholder="Pesquisar" />
+                    <Pressable style={employee.button} onPress={() => {}}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} size={20} style={{color: "#fff",}}/>
                     </Pressable>
                 </View>
                 <View style={global.group}>
-                    {listComponentEmployees}
+                    {listComponentEmployee}
                 </View>
             </View>
         </ScrollView>

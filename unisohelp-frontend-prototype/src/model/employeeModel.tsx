@@ -7,7 +7,9 @@ interface EmployeeModel {
     id: number,
     name: string,
     position: PositionModel[],
-    course: CourseModel[] | null
+    course: CourseModel[] | null,
+    email: string,
+    photo: string
 };
 
 //exportando modelo
