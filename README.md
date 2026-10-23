@@ -43,10 +43,10 @@ A seguir, são apresentadas algumas telas do protótipo do UNISO Help, demonstra
 </p>
 
   <p align="center">
-    <img src="login.png" alt="Tela de login" width="100%">
+    <img src="login.png" alt="Tela de login" width="50%">
   </p>
   <p align="center">
-    <img src="index.png" alt="Tela inicial" width="100%">
+    <img src="index.png" alt="Tela inicial" width="50%">
   </p>
 
 
