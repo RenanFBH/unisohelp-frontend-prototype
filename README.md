@@ -42,11 +42,13 @@ A proposta é reduzir as dificuldades na localização de informações acadêmi
 A seguir, são apresentadas algumas telas do protótipo do UNISO Help, demonstrando a interface e a organização dos recursos propostos para facilitar o acesso às informações acadêmicas.
 </p>
 
-<!-- Adicionar prints do protótipo
   <p align="center">
-    <img src="assets/img/nome-da-imagem.png" alt="Descrição da tela" width="280">
+    <img src="login.png" alt="Tela de login" width="100%">
   </p>
--->
+  <p align="center">
+    <img src="index.png" alt="Tela inicial" width="100%">
+  </p>
+
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -104,6 +106,39 @@ O protótipo utiliza tecnologias voltadas ao desenvolvimento de aplicações mul
   </tbody>
 </table>
 
+## ▶️ Como executar o projeto
+
+Para executar o protótipo localmente, é necessário ter o [Node.js](https://nodejs.org/) instalado no computador.
+
+**1. Instale as dependências**
+
+Abra o terminal na pasta raiz do projeto, onde está localizado o arquivo `package.json`, e execute:
+
+```bash
+npm install
+```
+
+**2. Execute o protótipo no navegador**
+
+Após a instalação das dependências, execute o comando:
+
+```bash
+npx expo start --web
+```
+
+Aguarde a inicialização do Expo. Se o navegador não abrir automaticamente, acesse o endereço local informado no terminal.
+
+**3. Configure a visualização para celular**
+
+Com o protótipo aberto no navegador:
+
+1. Abra as ferramentas de desenvolvedor pressionando `F12` ou `Ctrl + Shift + I`.
+2. Ative o modo de dispositivo móvel pelo ícone de celular e tablet ou pressionando `Ctrl + Shift + M`.
+3. Selecione um dispositivo disponível ou configure manualmente as dimensões da tela para as de um celular, por exemplo, `390 × 844` pixels.
+4. Se necessário, atualize a página para visualizar corretamente a interface.
+
+Após esses passos, será possível navegar pelo protótipo utilizando uma visualização semelhante à tela de um smartphone.
+
 ## 🏗️ Arquitetura
 
 <p align="justify">
@@ -116,13 +151,13 @@ O projeto adota o padrão arquitetural <strong>MVVM (Model–View–ViewModel)</
 
 ## 🚧 Status do projeto
 
-**Em desenvolvimento — protótipo acadêmico de frontend.**
+**Concluído — protótipo acadêmico de frontend finalizado.**
 
 <p align="justify">
-Este repositório contém a interface visual e interativa do UNISO Help, destinada à demonstração da proposta do projeto.
+Este repositório contém o protótipo finalizado da interface visual e interativa do UNISO Help, desenvolvido para demonstrar a proposta do projeto.
 </p>
 
-> **Importante:** este protótipo não representa uma aplicação pronta para produção. Ele não possui integração com os sistemas institucionais, autenticação com segurança de produção ou hospedagem da aplicação. As funcionalidades apresentadas não implicam que todos os serviços estejam conectados a um back-end ou banco de dados.
+> **Importante:** este protótipo não representa uma aplicação pronta para produção. Ele não possui integração com os sistemas institucionais, autenticação com segurança de produção ou hospedagem da aplicação. As funcionalidades apresentadas não implicam que todos os serviços estejam funcionais.
 
 ## 🎓 Contexto acadêmico
 
