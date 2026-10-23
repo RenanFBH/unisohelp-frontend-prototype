@@ -18,8 +18,6 @@ import accessibility from '../components/accessibility-layout';
 //definindo o tipo da navegação para a tela accessibility
 type NavigationProp = StackNavigationProp<RootStackParamList, "accessibility">;
 
-
-
 //função principal
 const AccessibilityScreen = () => {
 

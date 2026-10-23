@@ -45,6 +45,7 @@ const theme =  {
     backgroundOpacity: "rgba(0, 0, 0, 0.5)",
     buttonGuideModal: buttonGuideModalColor,
     linkGuideModal: linkGuideModalColor,
+    errorColor: "#F00",
   }
 };
 

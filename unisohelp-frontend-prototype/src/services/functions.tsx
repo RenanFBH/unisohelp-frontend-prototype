@@ -4,6 +4,7 @@ import { Linking } from "react-native";
 //classe que contém funções gerais
 class Functions {
 
+    //função para formatar telefone
     formatPhone(phone: number) {
         const stringPhone = phone.toString();
         const ddd = stringPhone.substring(0, 2);
@@ -13,6 +14,7 @@ class Functions {
         return phoneFormatted;
     };
 
+    //função para formatar lista de cargos
     formatPositions(position: string) {
         let positionFormatted = "";
         const p = position.split(" ");
@@ -26,6 +28,7 @@ class Functions {
         return positionFormatted.toString();
     };
 
+    //função para retirar título do nome
     formatEmployeeName(name: string) {
         let employeeNameFormatted = "";
         const n = name.split(" ");

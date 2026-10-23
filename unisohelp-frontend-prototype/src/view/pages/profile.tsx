@@ -21,8 +21,10 @@ const ProfileScreen =()=> {
     //tipando o hook useNavigation com o tipo NavigationProp
     const navigation = useNavigation<NavigationProp>();
 
+    //instanciando studentViewModel
     const studentViewModel = new StudentViewModel;
 
+    //atribuindo dados a variável data através id do localStorage
     const data = studentViewModel.getById(Number(localStorage.getItem("id")));
 
     //visual da página calendars

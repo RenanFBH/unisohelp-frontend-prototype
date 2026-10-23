@@ -40,6 +40,9 @@ const EmployeeScreen =()=> {
     useEffect(() => { 
         setEmployeesList(employeeManager.getAll()); 
     }, []);
+    useEffect(() => {
+        notFoundEmployee();
+    }, [employeesList]);
 
     //função para adicionar cada funcionário a um componente 'view'
     const renderEmployees =(employees: Record<number, EmployeeModel>)=> {
@@ -68,11 +71,13 @@ const EmployeeScreen =()=> {
                 </View>     
             );
         }
+        
         return listComponentEmployee;
     };
 
     //variáveis do formulário de pesquisa
     const [search, setSearch] = useState("");
+    const [voidSearch, setVoidSearch] = useState(false);
 
     //função para pesquisar funcionários
     const employeesFound = (search: string) => {
@@ -82,6 +87,19 @@ const EmployeeScreen =()=> {
         } 
         setEmployeesList(employeeManager.getByName(search));
         return;
+    };
+
+    //função para funcionário não encontrado
+    const notFoundEmployee =()=> {
+        let qtyEmployees = 0;
+        for (const e in employeesList) {
+            qtyEmployees += 1;
+        }
+        if (qtyEmployees === 0) {
+            setVoidSearch(true);
+        } else {
+            setVoidSearch(false);
+        }
     };
 
     //visual da página employees
@@ -107,6 +125,9 @@ const EmployeeScreen =()=> {
                 <View style={global.group}>
                     {renderEmployees(employeesList)}
                 </View>
+                {voidSearch === true && (
+                    <Text style={global.text}>Nenhum funcionário encontrado!</Text>
+                )}
             </View>
         </ScrollView>
     );

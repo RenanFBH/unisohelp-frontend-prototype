@@ -7,7 +7,7 @@ import theme from "./theme";
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
-//função de css global
+//função de css da página de início
 const index = StyleSheet.create({ 
 
   titleAndSubtitleView: {

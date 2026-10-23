@@ -246,15 +246,15 @@ const AtividadesComplementares =({ onClose }: ModalProps)=> {
 };
 
 //modal de erro de login
-const Error =(e: string)=> {
+const Error =({onClose}: ModalProps)=> {
   return (
     <View style={modal.background}>
-      <View style={modal.card}>
-        <ScrollView style={modal.scroll} showsVerticalScrollIndicator={false}>
+      <View style={modal.cardError}>
+        <ScrollView style={modal.scrollError} showsVerticalScrollIndicator={false}>
           <View style={modal.header}>
-            <Text style={modal.title}>Erro: {e}</Text>
-            <Pressable style={modal.close}>
-              <FontAwesomeIcon icon={faCircleXmark} size={30} style={global.icon} />
+            <Text style={modal.titleError}>Erro!</Text>
+            <Pressable style={modal.close} onPress={onClose}>
+              <FontAwesomeIcon icon={faCircleXmark} size={30} style={modal.icon} />
             </Pressable>
           </View>
           <View style={modal.content}>

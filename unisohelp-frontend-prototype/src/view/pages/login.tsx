@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../routes';
 import Authentication from '../../viewmodel/authViewModel';
+import { Error } from './modal';
 
 //importando tema
 import theme from '../components/theme';
@@ -28,7 +29,7 @@ const LoginScreen =()=> {
   const [btnPress, setBtn] = React.useState("unpressed");
   const [ra, setRa] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [error, setError] = React.useState(false);
+  const [errorModal, setErrorModal] = React.useState(false);
   let name = "Renan";
   
   //função para logar
@@ -36,12 +37,12 @@ const LoginScreen =()=> {
     const auth = new Authentication();
     let response = auth.Login(Number(ra), password, remember);
     if (!response) {
-      
+      setErrorModal(true);
       return false;
     } 
     navigation.navigate("index");
   };
-
+  
   //visual da página login
   return (
     <View style={global.background}>
@@ -90,6 +91,11 @@ const LoginScreen =()=> {
             </View>
           </View>
         </View>
+        {errorModal === true && (
+          <View style={{position: 'absolute',  zIndex: 999}}>
+            <Error onClose={() => setErrorModal(false)}/>
+          </View>
+        )};
     </View>
   );
 }

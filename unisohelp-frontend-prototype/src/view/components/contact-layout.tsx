@@ -7,7 +7,7 @@ import theme from "./theme";
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
-//função de css global
+//função de css da página de contatos
 const contact = StyleSheet.create({ 
 
   sector: {
@@ -31,6 +31,7 @@ const contact = StyleSheet.create({
     color: theme.colors.secondary,
     fontSize: 18,
     textAlign: "center",
+    marginTop: 10,
   },
 
 });

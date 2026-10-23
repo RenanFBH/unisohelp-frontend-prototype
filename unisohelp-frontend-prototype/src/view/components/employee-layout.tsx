@@ -7,7 +7,7 @@ import theme from "./theme";
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
-//função de css global
+//função de css da página de funcionários
 const employee = StyleSheet.create({
 
   filter: {
@@ -77,6 +77,7 @@ const employee = StyleSheet.create({
     backgroundColor: theme.colors.secondary,
     height: height * 0.001,
     width: width * 0.6,
+    marginTop: 5,
   }
   
 });

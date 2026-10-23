@@ -7,7 +7,7 @@ import theme from "./theme";
 //variáveis das dimensões da tela
 const { width, height } = Dimensions.get("window");
 
-//função de css global
+//função de css da página de modais
 const modal = StyleSheet.create({ 
 
   background: {
@@ -24,10 +24,21 @@ const modal = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
   },
+  cardError: {
+    backgroundColor: theme.colors.primary,
+    borderRadius: 20,
+    justifyContent: "center",
+  },
   scroll: {
     padding: 30,
     borderRadius: 20,
     height: height * 0.4,
+    width: width * 0.95,
+  },
+  scrollError: {
+    padding: 30,
+    borderRadius: 20,
+    height: height * 0.15,
     width: width * 0.95,
   },
   header: {
@@ -35,16 +46,25 @@ const modal = StyleSheet.create({
     flexDirection: "row",
     textAlign: "center",
     justifyContent: "center"
-    
   },
   title: {
     color: theme.colors.secondary,
     fontSize: 20,
     fontWeight: 700,
   },
+  titleError: {
+    color: theme.colors.errorColor,
+    fontSize: 20,
+    fontWeight: 700,
+  },
   close: {
     position: "absolute",
     marginLeft: width * 0.7,
+  },
+  icon: {  
+    color: theme.colors.errorColor,
+    marginRight: width * 0.65,
+    position: "absolute",
   },
   content: {
     marginTop: 20,

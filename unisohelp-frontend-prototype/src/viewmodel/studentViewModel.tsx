@@ -1,6 +1,5 @@
 //importando elementos essenciais
 import studentRepository from "../data/repository/studentRepository";
-import CourseModel from "../model/courseModel";
 
 //classe principal
 class StudentViewModel {
@@ -28,7 +27,6 @@ class StudentViewModel {
       }
     }
   }
-
 
 };
 
